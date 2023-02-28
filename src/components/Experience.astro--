@@ -1,0 +1,98 @@
+---
+const jobs = [
+  {
+    title: "Lead Software Consultant",
+    company: "Thoughtworks",
+    timeRange: "2021-Present",
+    description:
+      "Evolving business capabilities through outcome driven software engineering.",
+  },
+  {
+    title: "Engineering Manager | Platform Tooling",
+    company: "KPMG",
+    timeRange: "2018-2021",
+    description:
+      "Acting as the key technical resource and development manager for the custom software development team inside the Enterprise Architecture group at KPMG, I oversaw the development of four successful projects. These projects included DevOps tooling and build automation DSL, Enterprise ETL and data transfer bus, KPMG's Federated Authentication Platform, and the organization's Infrastructure-as-Code framework. \
+      \
+       Responsibilities included writing technical architecture proposals, planning and grooming of complex business requirements into implementable stories, working with security architects to ensure the highest levels of data security and secure code practices were followed, and hiring and growing a magnificent team of developers. My team has become the premier development team internally at KPMG. We are now the go-to group for any new custom development initiatives. We are passionate about implementing the software using industry established best practices.",
+  },
+  {
+    title: "Tech Lead | Cognitive Projects",
+    company: "KPMG",
+    timeRange: "2016-2018",
+    description:
+      "As the lead development resource for the Cognitive Projects pilot, I designed a new application architecture that has since been used for all cognitive projects at KPMG. I implemented roboust continuous integration and deployment workflows utilizing Jenkins, Gradle, and Git. These workflows allowed for the adoption of Test Driven Development and reduced time to production. I worked closely with business users and project managers to translate complex, sometimes loosely defined, business requirements into comprehensive actionable technical requirements.",
+  },
+  {
+    title: "Software Craftsman",
+    company: "Bravo LT",
+    timeRange: "2015-2016",
+    description:
+      "As a member of the talented team at Bravo, I designed and implemented enterprise web services using Spring for a regional healthcare system. I also led development efforts and defined new processes for automated testing for a large CRM system while leveraging expertise in Linux, Maven, Ansible, Git, XSLT, and the Atlassian suite of agile tools to overcome any technical road blocks.",
+  },
+  {
+    title: "Software Engineer II",
+    company: "Dematic",
+    timeRange: "2015",
+    description:
+      "While working on the Global Research & Development team, I led the transition from SVN to Git and from Flash to Java. These efforts included leading trainings on Git and the development workflow changes necessitated by that change. I participated in the Agile process, utilizing weekly meetings and daily scrum to continuously improve the quality of the products.",
+  },
+  {
+    title: "Data Manipulation Specialist",
+    company: "KCI",
+    timeRange: "2011-2015",
+    description:
+      "As a senior member of the IS department, I initiated several practices to increase the efficiency of the development and product delivery. Working closely with Leadership, I was able to re-invent the talent acquisition process which led to better cohesion, productivity, and retention in the IS department. Implemented Agile methods to help reduce turnaround times and increase Leadership satisfaction.",
+  },
+];
+---
+
+<section
+  aria-labelledby=":rr:"
+  class="mx-auto max-w-5xl sm:px-6 sm:border-l sm:border-primary-700/40"
+>
+  <div class="grid grid-cols-1 gap-y-8 items-baseline md:grid-cols-4">
+    <h2
+      id=":rr:"
+      class="text-lg font-semibold tracking-tight sm:text-xl text-primary-100"
+    >
+      Experience
+    </h2>
+    <div class="md:col-span-3">
+      <ul role="list" class="space-y-16">
+        {
+          jobs.map((j) => (
+            <li class="flex flex-col items-start">
+              <>
+                <div class="flex flex-row justify-between items-baseline pl-2 w-full border-l border-primary-700">
+                  <div class="flex flex-col">
+                    <div class="flex flex-row gap-2 items-center">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src={`/images/${j.company.toLowerCase()}.png`}
+                        class="w-5 h-5 rounded-full ring-1 shadow-md shadow-primary-800/5 ring-primary-900"
+                      />
+                      <h3 class="text-base font-semibold tracking-tight sm:max-w-none sm:text-lg max-w-[20ch] text-primary-100">
+                        {j.company}
+                      </h3>
+                    </div>
+
+                    <h2 class="text-sm tracking-tight sm:max-w-none sm:text-base max-w-[20ch] text-primary-300">
+                      {j.title}
+                    </h2>
+                  </div>
+                  <time class="text-sm text-primary-600">{j.timeRange}</time>
+                </div>
+
+                <p class="z-10 mt-4 text-sm text-primary-300 max-w-[75ch]">
+                  {j.description}
+                </p>
+              </>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
